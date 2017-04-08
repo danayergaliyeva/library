@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE HTML>
 <php lang="en">
 <head>
@@ -56,7 +51,7 @@
 					</li>
 					<li>
 						<i class="fa fa-newspaper-o"></i> 
-						<a href="#"> Бесплатные электронные ресурсы  </a>
+						<a href="freeresources.php"> Бесплатные электронные ресурсы  </a>
 					</li>
 					<li>
 						<i class="fa fa-newspaper-o"></i> 
@@ -88,16 +83,15 @@
 				<?php
 					include('admin/dbconnect.php');
 					if ($_SERVER["REQUEST_METHOD"] == "GET") {
-					  $word = $_GET["word"];
-					  $type = $_GET["type"];
+					  @$word = $_GET["word"];
+					  @$type = $_GET["type"];
 
 					  $sql = "SELECT * FROM books where ".$type." like '%".$word."%'";
-					 
-					  $result = $conn->query($sql);
-						if ($result->num_rows > 0) {
+					 	
+					  	@$result = $conn->query($sql);
+						if (@$result->num_rows > 0) {
 						    
 							echo "<table class='col-md-10' 	id='search-result'><tr> <th>Название </th> <th>Автор </th> <th> Язык </th> </tr>";
-
 
 						    while($row = $result->fetch_assoc()) {
 						        echo "<tr> <td> " . $row["name"]. " </td> <td> " . 
@@ -109,11 +103,63 @@
 						$conn->close();
 					}else{
 
+
 					}
 				?>
 				</div>
+				<div class="databaselist">
+					<a href="http://rmebrk.kz/" > <img src="img/springer-link.jpg"> </a>
+					<a href="" > <img src="img/thomson.jpg"> </a>
+					<a href="" > <img src="img/asee_logo4.png"> </a>
+					<a href="" > <img src="img/doaj.jpg"> </a>
+					<a href="" > <img src="img/springer-link.jpg"> </a>
+					<a href="" > <img src="img/springer-link.jpg"> </a>
+					<a href="" > <img src="img/springer-link.jpg"> </a>
+					<a href="" > <img src="img/springer-link.jpg"> </a>
+					<a href="" > <img src="img/springer-link.jpg"> </a>
+					<a href="" > <img src="img/springer-link.jpg"> </a>
+				</div>
+
+
+
+
+
 			</div>
 		</div>
+
 	</div>
+<div class="footer">
+	<div class="container">
+		<div class="row">
+				<div class="footer-block">
+					<h2 > Контакты </h2>
+					<i class="fa fa-map-marker"></i> 
+					<h4> ул. Абылай хана 1/1
+					г. Каскелен,
+					Алматинская обл., Карасайский р-н </h4>
+					<i class="fa fa-phone"></i> 
+					<h4> Тел: +7 727 307 95 60, 65
+	Факс: +7 727 307 95 58</h4>
+	<i class="fa fa-envelope"></i> 
+					<h4> e-mail: info@sdu.edu.kz </h4>	
+				</div>
+
+				<div class="footer-block">
+					<h2 > Администрация: </h2>
+					<i class="fa fa-clock-o"></i> 
+					<h4> 
+Пн-Пт: 900 – 1800
+Суббота: 900 – 1400
+Воскресенье: выходной</h4>
+				</div>	
+
+
+		</div>
+
+	</div>
+	<div class="footer-bottom">
+
+		</div>
+</div>
 </body>
 </html>
