@@ -80,11 +80,13 @@ header h3{
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgb(255, 255, 255);
+     width: 250px !important;
 }
 .block-content li a{
 	padding-bottom: 14px;
     padding-top: 10px;
     color: #232323;
+
 }
 .block-content i{
 	color: #0A5F58;
@@ -165,7 +167,6 @@ header h3{
 }
 .main-title{
 	display: block;
-	margin-left: 30px;
 	margin-top: 10px;
 	border-bottom: 2px solid #bf9d36;
     line-height: 1.2;
@@ -244,3 +245,72 @@ header h3{
 	background-color: #2C3E50;
 	height: 70px;
 }
+.menu-wrapper{
+	width: 100%;
+	height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    background-color: #E5EBE9;
+    box-shadow: 2px 2px 3px 3px rgba(0,0,0,0.5);
+}
+.menu-wrapper>ul>li{
+	list-style: none;
+	float:left;
+	color: #4d4e53;
+    margin-right: 30px;
+
+}
+.menu-wrapper>ul>li>a{
+	color: #4d4e53;
+	text-decoration: none;
+}
+.menu-wrapper>ul>li:first-child{
+	margin-left: 120px;
+}
+.tablecontent{
+	display: block;
+	margin-top: 45px;
+}
+.tablecontent>table{
+	width: 100%;
+	background: gray;
+}
+.rtecenter{
+	text-align: center;
+	font-size: 1.4em;
+}
+
+.headertable{
+	background-color: #EDEBE4 !important;
+	line-height: 30px;
+	border-color: #d5d5d5;
+    color: #2c3e50 !important;
+    line-height: 0.9;
+    font-size: 100%;
+    font-family: 'Segoe UI','Myriad Pro',Myriad,Arial,Helvetica,sans-serif;
+}
+
+.headertable{
+	line-height: 30px;
+	font-size: 15px;
+}
+tbody>tr:nth-child(2n) {
+    background: #FBF1D7;
+    border-bottom: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5;
+ }
+ tbody>tr:nth-child(2n+1) {
+    background: #FFF;
+    border-bottom: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5;
+ }
+ .galery{
+ 	height: 600px !important;
+ 	display: block;
+ }
+ .galery>img{
+ 	width: 30%;
+ 	height: 150px;
+ 	margin-left: 15%;
+ 	margin-top: 30px;
+ }

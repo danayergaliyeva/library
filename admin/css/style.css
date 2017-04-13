@@ -6,18 +6,19 @@ body{
 	background-color: #edeef0 !important;
 }
 .logo img{
-	width: 100px;
-	height: 25px;
-	float: left;
-	margin-top: 5px;
-}
-.logo>img{
 	width: 150px;
-	height: 40px;
-	margin-top: 17px;
+	height: 35px;
+	float: left;
+	margin-top: 15px;
+}
+
+.logo>img{
+	width: 170px;
+	height: 50px;
+	margin-top: 20px;
 }
 .container{
-	background-color: #1D1D27;
+	background-color: #2c3e50;
 }
 .menu li{
 	display: inline-block;
@@ -39,8 +40,8 @@ body{
 	color:white;
 	line-height: 15px;
 	margin-top: 0em !important;  /* Отступ сверху */
-    margin-bottom: 0em !important;
-    font-weight: bold;
+  margin-bottom: 0em !important;
+  font-weight: bold;
 }
 .main-area{
 	background-color: white;

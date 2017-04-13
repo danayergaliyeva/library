@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SDU Library</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="libs/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../libs/css/bootstrap.min.css">
 	<link rel='shortcut icon' type='image/x-icon' href='img/icon.png'/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -12,7 +12,7 @@
 <div class="menu-wrapper">
 		<ul>
 			<li>  
-				<a href="menu/guide.php"> 
+				<a href="guide.php"> 
 				<i class="fa fa-map" aria-hidden="true"> </i> Путеводитель </a> 
 			</li>
 			<li> 
@@ -20,7 +20,7 @@
 				<i class="fa fa-map-signs" aria-hidden="true"></i> Виртуальный тур </a> 
 			</li>
 			<li> 
-				<a href="menu/galery.php"> <i class="fa fa-picture-o" aria-hidden="true">
+				<a href="galery.php"> <i class="fa fa-picture-o" aria-hidden="true">
 				</i> Галерея  </a>
 			</li>
 		</ul>
@@ -29,7 +29,7 @@
 	
 		<div class="row">
 			<header class="col-md-12">
-				<img src="img/sdu_only.svg" class="col-md-offset-1">
+				<img src="../img/sdu_only.svg" class="col-md-offset-1">
 				<h2> Library of SDU </h2> <br>
 				<h3> Suleyman Demirel University </h3>
 			</header>
@@ -81,67 +81,77 @@
 					</li>
 				</ul>
 			</div>
-			<div class="block-main col-md-8">
-				<div class="search-block">
-					<p> Поиск по всем научно-образовательным ресурсам </p>
-					<form action="" method="GET">
+<div class="block-main col-md-8">	
+<div>
+	<span class="col-md-8 main-title"> Путеводитель по библиотеке СДУ</span>
+</div>
+<div class="tablecontent">
+<table border="0" cellpadding="5" cellspacing="5" width="100">
+<tr class="headertable">
+	<th scope="col"><strong>№</strong></th>
+	<th scope="col"><strong>№ Кабинета</strong></th>
+	<th scope="col"><strong>Наименования</strong></th>
+</tr>
+<tr>
+<td colspan="3">
+	<h3 class="rtecenter">
+		<span style="color:#b91f1e">1 этаж</span>
+	</h3>
+</td>
+</tr>
+<tbody>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+<td colspan="3">
+	<h3 class="rtecenter">
+		<span style="color:#b91f1e">1 этаж</span>
+	</h3>
+</td>
+</tr>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>110</td>
+		<td>Зал каталогов</td>
+	</tr>
+	<tr>
+</tbody>
+</table>
+</div>
 
-						<select name="type">
-							<option value="name" selected="selected" value="">Ключевое слово:</option>
-							<option value="name">Название:</option>
-							<option value="author">Автор:</option>
-						</select>
-
-						<input id="ebsco-input" name="word" size="18" 
-						type="text" class="ie-no-ph col-md-7" placeholder="введите ключевое слово...">
-
-						<input type="submit" value="Поиск">
-
-					</form>
-				</div>
-			
-
-				<div class="result col-md-offset-1">
-				<?php
-					include('admin/dbconnect.php');
-					if ($_SERVER["REQUEST_METHOD"] == "GET") {
-					  @$word = $_GET["word"];
-					  @$type = $_GET["type"];
-
-					  $sql = "SELECT * FROM books where ".$type." like '%".$word."%'";
-					  	@$result = $conn->query($sql);
-						if (@$result->num_rows > 0) {  
-							echo "<table class='col-md-10' 	id='search-result'><tr> <th>Название </th> <th>Автор </th> <th> Язык </th> </tr>";
-						    while($row = $result->fetch_assoc()) {
-						        echo "<tr> <td> " . $row["name"]. " </td> <td> " . 
-						        $row["author"]. " </td> <td>" . $row["language"]. "</td>";
-						    }
-						} else {
-						    echo "0 results";
-						}
-						$conn->close();
-					}else{}
-				?>
-				</div>
-				<div class="databaselist">
-					<a href="http://rmebrk.kz/" > <img src="img/springer-link.jpg"> </a>
-					<a href="http://webofknowledge.com" > <img src="img/thomson.jpg"> </a>
-					<a href="http://asee.org" > <img src="img/asee_logo4.png"> </a>
-					<a href="http://doaj.org" > <img src="img/doaj.jpg"> </a>
-					<a href="http://kazakhstanvsl.org" > <img src="img/vsl.png"> </a>
-					<a href="http://zbmath.org" > <img src="img/zbMATH.gif"> </a>
-					<a href="http://polpred.com" > <img src="img/polpred.png"> </a>
-					<a href="http://sciverse.com" > <img src="img/elsevier.jpg"> </a>
-					<a href="http://ebscohost.com" > <img src="img/ebsco.gif"> </a>
-					<a href="http://doaj.org" > <img src="img/doaj.jpg"> </a>
-				</div>
-
-
-
-
-
-			</div>
-		</div>
 
 	</div>
 <div class="footer">
