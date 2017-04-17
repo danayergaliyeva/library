@@ -30,7 +30,7 @@
 
 
 <?
-	include '../layouts/header.php';
+	include 'layouts/header.php';
 ?>
 		<div class="main-area col-sm-12 col-md-12">
 			<div class="panel-header">

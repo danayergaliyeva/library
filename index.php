@@ -26,10 +26,9 @@
 		</ul>
 </div>
 	<div class="container-fluid">
-	
 		<div class="row">
 			<header class="col-md-12">
-				<img src="img/sdu_only.svg" class="col-md-offset-1">
+				<a href="index.php"> <img src="img/sdu_only.svg" class="col-md-offset-1"> </a>
 				<h2> Library of SDU </h2> <br>
 				<h3> Suleyman Demirel University </h3>
 			</header>
@@ -73,7 +72,7 @@
 					</li>
 					<li>
 						<i class="fa fa-users"></i> 
-						<a href="freeresources.php"> Бесплатные электронные ресурсы  </a>
+						<a href="menu/freeresources.php"> Бесплатные электронные ресурсы  </a>
 					</li>
 					<li>
 						<i class="fa fa-globe"></i> 
@@ -81,6 +80,8 @@
 					</li>
 				</ul>
 			</div>
+
+
 			<div class="block-main col-md-8">
 				<div class="search-block">
 					<p> Поиск по всем научно-образовательным ресурсам </p>
@@ -135,11 +136,6 @@
 					<a href="http://ebscohost.com" > <img src="img/ebsco.gif"> </a>
 					<a href="http://doaj.org" > <img src="img/doaj.jpg"> </a>
 				</div>
-
-
-
-
-
 			</div>
 		</div>
 
