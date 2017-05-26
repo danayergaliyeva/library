@@ -2,57 +2,110 @@
 	include 'layouts/header.php';
 ?>
 		<div class="main-area col-sm-12 col-md-12">
-			<div class="panel-header">
-	
-<?			
-	include('dbconnect.php');
-	$sql = "SELECT g.studentID, g.bookID, NOW( ) , g.date
-			FROM  `givenbook` AS g WHERE DATEDIFF( NOW( ) , g.date ) >10 AND 
-			g.status = 0 ";
-	@$result = $conn->query($sql);
-
-	if (@$result->num_rows > 0) {  
-		echo "<div id='penaltybooks'>";
-	    while($row = $result->fetch_assoc()) {
-
-	        echo $row["studentID"]."----".
-	        $row["bookID"]."----". $row["date"];
-	        echo '<br>';
-	    }
-	    echo "</div>";
-	} else {
-	    echo "0 results";
-	}
-	$conn->close();
-?>				
-
-
-<p id="b"> Books </p>
-<p id="s"> Students </p>
-<p id="t"> Teachers </p>
-
-
-<p id="asd"> HIDE/SHOW </p>
-			</div>
+		<div class="panel-header">
+		<h1 class="menu-title"> Stats book </h1>
 		</div>
-		<div class="footer col-sm-12 col-md-12">
-			<h3> &COPY Copyright 2016 - 2017, All Rights Reserved </h3>
-		</div>
+
+<div class="booksmenu col-md-2">
+	<p id="studentsbooks"> <img src="img/slide.png" alt=""> Students </p>
+	<p id="givenbooks"> <img src="img/slide.png" alt=""> Given books </p>
+</div>
+
+<div class="bookresult col-md-10">
+	<div class="studentsbooks">
+			<?			
+			include('dbconnect.php');
+			$sql = "SELECT distinct g.* , s.name , s.surname from givenbook g , students s 
+									where g.studentID = s.studentID  order by `date`";
+			@$result = $conn->query($sql);
+			if (@$result->num_rows > 0) {  
+				echo "<table id='customers'>
+						<tr>
+							  <th>FULL NAME</th>
+							  <th>ID</th>
+							  <th>BOOK 		ID</th>
+							  <th>GIVE DATE</th>
+							  <th>TAKE DATE</th>
+						</tr>";
+			    while($row = $result->fetch_assoc()) {
+			    	$givendate = $row["Date"];
+					$takebook = date('Y-m-d H:i:s', strtotime($givendate . ' + '.$row['days'].' day'));
+			    	echo "<tr> ";
+			        echo "<td>".$row["name"]." ".$row["surname"]."</td>";
+			        echo "<td>".$row["studentID"]."</td>";
+			        echo "<td>".$row["bookID"]."</td>";
+			        echo "<td>".$row["Date"]."</td>";
+			        echo "<td>".$takebook."</td>";
+			        echo '</tr>';
+			    }
+			    echo "</table>";
+			
+			} else {
+			    echo "0 results";
+			}
+			$conn->close();
+		?>
+
 	</div>
+
+	<div class="givenbooks">
+		<?			
+			include('dbconnect.php');
+			$sql = "SELECT distinct g.* , NOW( ) , s.name , s.surname , g.date as dif
+             FROM  `givenbook` g , `students` s WHERE
+			  g.studentID = s.studentID and
+              DATEDIFF( NOW( ) , g.date ) > 10 AND g.status = 0 ";
+			@$result = $conn->query($sql);
+			if (@$result->num_rows > 0) {  
+				echo "<table id='customers'>
+						<tr>
+							  <th>FULL NAME</th>
+							  <th>ID</th>
+							  <th>BOOK 		ID</th>
+							  <th>GIVE DATE</th>
+							  <th>TAKE DATE</th>
+						</tr>";
+			    while($row = $result->fetch_assoc()) {
+			    	$givendate = $row["Date"];
+					$takebook = date('Y-m-d', strtotime($givendate . ' + '.$row['days'].' day'));
+
+			    	echo "<tr> ";
+			        echo "<td>".$row["name"]." ".$row["surname"]."</td>";
+			        echo "<td>".$row["studentID"]."</td>";
+			        echo "<td>".$row["bookID"]."</td>";
+			        echo "<td>".$row["dif"]."</td>";
+			        echo "<td>".$takebook."</td>";
+			        echo '</tr>';
+			    }
+			
+			} else {
+			    echo "0 results";
+			}
+			$conn->close();
+		?>
+	</div>	
+</div>
+
+
+	</div>
+
 </div>
 
 
 <script type="text/javascript">
+
 	$(document).ready(function(){
-		$('#b').click(function(){
-			$('#penaltybooks').toggle('slow');
+		$('#studentsbooks').click(function(){
+			$('.studentsbooks').show('slow');
+			$('.givenbooks').hide('slow');
 		});
 
-		$('#s').click(function(){
-			$('#asd').toggle('slow');
+		$('#givenbooks').click(function(){
+			$('.studentsbooks').hide('slow');
+			$('.givenbooks').show('slow');
 		});
 	});
 </script>
 
 </body>
-</php>
+</html>

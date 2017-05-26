@@ -2,12 +2,30 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
+	#search-input{
+		width: 320px;
+	}
+	.jQueryDatepicker {
+    	width: 265px !important;
+	}
 
 }
 
+
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+.jQueryDatepicker {
+		margin-top: 10px;
+    	width: 265px !important;
+	}
+}
 
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 1050px) {
+.jQueryDatepicker {
+		margin-top: 10px;
+    	width: 265px !important;
+	}
 }
 
 /* Small Devices, Tablets */

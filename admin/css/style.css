@@ -45,7 +45,7 @@ body{
 }
 .main-area{
 	background-color: white;
-	height: 700px;
+	height: 800px;
 	display: inline-block;
 }
 .panel-header{
@@ -152,6 +152,11 @@ table#customers {
 #customers tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+.cms ul{
+  width: 200px;
+
+}
+
 .cms li{
 	list-style: none;
 	width: 200px;
@@ -163,7 +168,9 @@ table#customers {
 	white-space: nowrap;
 	margin: 1px 0px 0px 0px;
 	padding: 0px;
+  cursor:pointer;
 }
+
 .cms img{
 	width: 40px; 
 	height: 40px;
@@ -172,7 +179,16 @@ table#customers {
 	border-radius: 10px;
 }
 
+.cms{
+  float:left;
+}
+.content-wrapper{
+  display: inline-block;
+  padding: 20px;
+}
+.addnews{
 
+}
 
 .footer{
 	height: 50px;
@@ -182,3 +198,33 @@ table#customers {
 	font-weight: bold;
 	vertical-align: center;
 }
+
+.bookmenu{
+  
+}
+.booksmenu>p{
+    height: 50px;
+    color: white;
+    border-radius: 3px;
+    background-color: #1D1D27;
+    border: 1px solid #e7e8ec;
+    white-space: nowrap;
+    margin: 1px 0px 0px 0px;
+    padding: 0px;
+    cursor: pointer;
+    display: block;
+}
+
+.givenbooks{
+  display: none;
+}
+
+.givenbooks , .studentsbooks{
+  margin-top: 20px;
+}
+
+.givenbooks #customers th{
+    background-color: #d9534f !important;
+    border-color: #d9534f !important;
+}
+

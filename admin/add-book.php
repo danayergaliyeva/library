@@ -7,10 +7,11 @@
 	  $publisher = test_input($_POST["publisher"]);
 	  $year = test_input($_POST["year"]);
 	  $pages = test_input($_POST["pages"]);
+	  $numberofbooks = test_input($_POST["numberofbooks"]);
 	  $language = test_input($_POST["language"]);
-	  $sql = "INSERT INTO books VALUES (NULL,'".$book_code."','".$name."','".$author."','".$publisher."','".$year."','".$pages."','".$language."')";
+	  $sql = "INSERT INTO books VALUES (NULL,'".$book_code."','".$name."','".$author."','".$publisher."','".$year."','".$pages."','".$numberofbooks."','".$language."')";
 		if ($conn->query($sql) === TRUE) {
-		    echo "<p  style='color:green'> Book added </p>";
+		    echo "<script> alert('Book added'); </script>";
 		} else {
 		    echo "Error: " . $sql . "<br>" . $conn->error;
 		}
@@ -23,8 +24,6 @@
 	  $data = htmlspecialchars($data);
 	  return $data;
 	}
-?>
-<?
 	include 'layouts/header.php';
 ?>
 		<div class="main-area col-sm-12 col-md-12">
@@ -38,11 +37,11 @@
 			            <input type="text" name="publisher"  required placeholder="PUBLISHER">
 			            <input type="number" name="year"  required placeholder="YEAR">
 			            <input type="number" name="pages"  required placeholder="PAGES">
+			            <input type="number" name="numberofbooks" required placeholder="NUMBER OF BOOKS">
 			            <input type="text"  name="language" required placeholder="LANGUAGES">
 			            <input type="submit" id="sub" value="ADD BOOK">
 			         </form>
 				</div>
-
 			</div>
 		</div>
 		<div class="footer col-sm-12 col-md-12">

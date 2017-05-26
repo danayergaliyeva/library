@@ -1,14 +1,15 @@
 <?php
 	include('dbconnect.php');
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	  $studentID = test_input($_POST["studentID"]);	
 	  $name = test_input($_POST["name"]);
 	  $surname = test_input($_POST["surname"]);
 	  $faculty = test_input($_POST["faculty"]);
 	  $course = test_input($_POST["course"]);
 	  $email = test_input($_POST["email"]);
-	  $sql = "INSERT INTO students VALUES (NULL,'".$name."','".$surname."','".$course."','".$faculty."','".$email."')";
+	  $sql = "INSERT INTO students VALUES (NULL,'".$studentID."','".$name."','".$surname."','".$faculty."','".$course."','".$email."')";
 		if ($conn->query($sql) === TRUE) {
-		    echo "<script> alert('Student added'); <script>";
+		    echo "<script> alert('Student added'); </script>";
 		} else {
 		    echo "Error: " . $sql . "<br>" . $conn->error;
 		}
@@ -32,7 +33,7 @@
 
 				<div class="main-form">
 					<form action="" method="POST">
-			            <input type="text" required placeholder="STUDENT ID">
+			            <input type="text" required name="studentID" placeholder="STUDENT ID">
 			            <input type="text" name="name" required placeholder="NAME">
 			            <input type="text" name="surname" required placeholder="SURNAME">
 			            <input type="text" name="faculty" required placeholder="FACULTY">

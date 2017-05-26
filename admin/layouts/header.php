@@ -1,5 +1,5 @@
-<!DOCTYPE php>
-<php lang="en">
+<!DOCTYPE HTML>
+<HTML lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>SDU Library</title>
@@ -54,8 +54,8 @@
 				</li>
 				<li class="col-md-1 col-sm-1 col-xs-4"> 
 						<a href="stats.php">
-							<i> <img src="img/stats.png" alt=""> </i>
-							<span>  Statistics </span>
+							<i> <img src="img/infobook.png" alt=""> </i>
+							<span>  InformBook </span>
 						</a>
 				</li>
 				<li class="col-md-1 col-sm-1 col-xs-4">
@@ -64,6 +64,5 @@
 							<span > Content managment </span>
 						</a>
 				</li>
-				-
 			</ul>
 		</div>
